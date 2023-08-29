@@ -1,6 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<style>
+    .transient{
+        background-color: darksalmon
+    }
+    .singleton{
+        background-color: aquamarine
+    }
+</style>
 
 <div class="text-center">
     <h2c lass="display-4">Dependency Injection Lifetime
@@ -8,20 +16,20 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Service Type</th>
-            <th>First Instance Operation ID</th>
-            <th>Second Instance Operation ID</th>
+            <th>Tipo do serviço</th>
+            <th>Primeira instância do serviço</th>
+            <th>Segunda instância do serviço</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td style="background-color: darksalmon">
+        <tr class="transient">
+            <td>
                 Transient
             </td>
-            <td style="background-color: darksalmon">
+            <td>
                 @ViewBag.transient1
             </td>
-            <td style="background-color: darksalmon">
+            <td>
                 @ViewBag.transient2
             </td>
         </tr>
@@ -30,14 +38,14 @@
             <td>@ViewBag.scoped1</td>
             <td>@ViewBag.scoped2</td>
         </tr>
-        <tr>
-            <td style="background-color: aquamarine">
+        <tr class="singleton">
+            <td>
                 Singleton
             </td>
-            <td style="background-color: aquamarine">
+            <td>
                 @ViewBag.singleton1
             </td>
-            <td style="background-color: aquamarine">
+            <td>
                 @ViewBag.singleton2
             </td>
         </tr>
